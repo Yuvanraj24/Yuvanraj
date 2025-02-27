@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'bloc_observer.dart';
+import 'portfolio_app.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: "Yuvanraj Arumugam",
-
-    );
-  }
+  Bloc.observer = MyBlocObserver();
+  runApp(const PortfolioApp());
 }
